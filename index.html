@@ -112,6 +112,19 @@ section{padding-block:clamp(72px,10vw,128px)}
 .works .more h3{font-size:28px;font-weight:700}
 .works .more p{color:var(--muted)}
 
+/* consegnati */
+.delivered{display:grid;gap:20px}
+@media (min-width:760px){.delivered{grid-template-columns:repeat(2,1fr)}}
+.live{display:grid;gap:18px;align-content:space-between;padding:28px;min-height:240px;text-decoration:none;background:var(--c1);color:var(--c2);border-radius:6px;transition:transform .25s}
+.live:hover{transform:translateY(-3px)}
+.live .top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.live .tag{font:500 11px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.badge{display:inline-flex;align-items:center;gap:8px;font:500 11px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;padding:7px 10px;border-radius:999px;border:1px solid currentColor}
+.badge::before{content:"";width:7px;height:7px;border-radius:50%;background:#3ddc84}
+.live strong{font:800 clamp(30px,3.6vw,46px)/1 var(--f-display);letter-spacing:-.02em;text-wrap:balance}
+.live p{opacity:.85;max-width:46ch}
+.live .go{display:flex;justify-content:space-between;align-items:center;font:500 13px/1 var(--f-mono)}
+
 /* metodo */
 .steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s}
 .step{display:grid;gap:12px 40px;padding-block:32px;border-top:1px solid var(--line);counter-increment:s}
@@ -161,7 +174,8 @@ footer{padding-block:40px;color:var(--muted);font-size:14px}
     <a class="logo" href="#top">resiting<span>.</span></a>
     <nav aria-label="Menu principale"><ul>
       <li><a href="#servizi">Servizi</a></li>
-      <li><a href="#lavori">Lavori</a></li>
+      <li><a href="#clienti">Clienti</a></li>
+      <li><a href="#lavori">Demo</a></li>
       <li><a href="#metodo">Come lavoro</a></li>
       <li><a href="#faq">Domande</a></li>
     </ul></nav>
@@ -216,10 +230,32 @@ footer{padding-block:40px;color:var(--muted);font-size:14px}
     </div>
   </section>
 
+  <section id="clienti" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">Clienti · Siti consegnati</p>
+        <h2>Già online, già al lavoro.</h2>
+        <p>Siti realizzati e consegnati ai clienti, oggi attivi sul loro dominio.</p>
+      </div>
+      <div class="delivered">
+        <a class="live" href="https://lavicrystalclean.it" target="_blank" rel="noopener" style="--c1:#0b2a3c;--c2:#e8f4fa">
+          <div class="top"><span class="tag">Impresa di pulizie · Val di Sole (TN)</span><span class="badge">Online</span></div>
+          <div><strong>Lavi CrystalClean</strong><p style="margin-top:12px">Pulizie ecologiche per case, uffici, negozi, B&amp;B e case vacanza in Val di Sole, Val di Rabbi e Val di Non.</p></div>
+          <div class="go"><span>lavicrystalclean.it</span><span>Visita il sito <span class="arrow">→</span></span></div>
+        </a>
+        <a class="live" href="https://nonsolobicipozzallo.it" target="_blank" rel="noopener" style="--c1:#e9e6df;--c2:#0e0e0f">
+          <div class="top"><span class="tag">Negozio di bici · Pozzallo (RG)</span><span class="badge">Online</span></div>
+          <div><strong>Non Solo Bici</strong><p style="margin-top:12px">Vendita di bici, e-bike e fat bike, riparazioni, assistenza monopattini e noleggio da aprile a ottobre.</p></div>
+          <div class="go"><span>nonsolobicipozzallo.it</span><span>Visita il sito <span class="arrow">→</span></span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section id="lavori" style="padding-top:0">
     <div class="wrap">
       <div class="head">
-        <p class="label">Lavori · Montichiari</p>
+        <p class="label">Demo · Montichiari</p>
         <h2>Sette attività, sette siti già pronti.</h2>
         <p>Sono proposte che ho realizzato per attività di Montichiari. Aprile e provale dal telefono: è lo stesso lavoro che posso fare per te.</p>
       </div>
@@ -287,7 +323,7 @@ footer{padding-block:40px;color:var(--muted);font-size:14px}
         <details><summary>Ho già un sito. Ha senso rifarlo?</summary><p>Se non mostra gli orari, non si legge bene dal telefono o è fermo da anni, probabilmente sì. Ti preparo una proposta e la confronti con quello che hai oggi.</p></details>
         <details><summary>Devo occuparmi io di dominio e hosting?</summary><p>No. Ti aiuto a scegliere il nome del sito e me ne occupo io. Il dominio resta intestato a te.</p></details>
         <details><summary>E se devo cambiare orari o foto?</summary><p>Mi scrivi e lo aggiorno io. Se preferisci, ti mostro come fare le modifiche più semplici da solo.</p></details>
-        <details><summary>Lavori solo a Montichiari?</summary><p>Parto da Montichiari, ma lavoro volentieri con attività di tutta la zona: Castenedolo, Carpenedolo, Ghedi, Calcinato, il Garda e Brescia.</p></details>
+        <details><summary>Lavori solo a Montichiari?</summary><p>Parto da Montichiari e lavoro volentieri con tutta la zona, dal Garda a Brescia. Seguo anche clienti lontani, come in Trentino e in Sicilia: ci sentiamo per telefono o videochiamata.</p></details>
       </div>
     </div>
   </section>
