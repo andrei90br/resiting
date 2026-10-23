@@ -153,7 +153,9 @@ details p{color:var(--muted);padding-bottom:26px;max-width:68ch}
 .cta-item h3{font-size:24px;font-weight:700}
 .cta-item p{opacity:.9}
 .mail{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
-.mail code{font:700 18px/1.3 var(--f-mono);user-select:all;word-break:break-all}
+.mail-link{color:inherit;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+.mail-link:hover{text-decoration-thickness:3px}
+.mail .mail-link{font:700 18px/1.3 var(--f-mono);user-select:all;word-break:break-all}
 .copy{border:1px solid var(--lake-ink);background:transparent;color:var(--lake-ink);border-radius:999px;padding:8px 14px;font:600 14px/1 var(--f-mono);cursor:pointer}
 .copy:hover{background:var(--lake-ink);color:var(--lake)}
 
@@ -334,8 +336,9 @@ footer{padding-block:40px;color:var(--muted);font-size:16px}
       <h2>Parliamo del tuo sito.</h2>
       <div class="cta-grid">
         <div class="cta-item"><h3>Scrivimi</h3><p>Raccontami la tua attività in due righe. Rispondo entro un giorno lavorativo.</p>
-          <div class="mail"><code id="mail">info@resiting.site</code><button class="copy" id="copy" type="button">Copia</button></div></div>
-        <div class="cta-item"><h3>Chiedi una demo</h3><p>Mandami il nome dell'attività e, se c'è, il link al sito o alla pagina Instagram. Preparo una proposta gratuita.</p></div>
+          <div class="mail"><a class="mail-link" id="mail" href="mailto:info@resiting.site">info@resiting.site</a><button class="copy" id="copy" type="button">Copia</button></div></div>
+        <div class="cta-item"><h3>Chiedi una demo</h3><p>Mandami il nome dell'attività e, se c'è, il link al sito o alla pagina Instagram. Preparo una proposta gratuita.</p>
+          <div><a class="btn small" style="border-color:var(--lake-ink);color:var(--lake-ink)" href="mailto:info@resiting.site?subject=Richiesta%20demo%20gratuita">Chiedi la demo via email <span class="arrow">→</span></a></div></div>
         <div class="cta-item"><h3>Incontriamoci</h3><p>Passo io da te, a Montichiari e dintorni, per mostrarti la demo dal vivo.</p></div>
       </div>
     </div>
@@ -345,7 +348,7 @@ footer{padding-block:40px;color:var(--muted);font-size:16px}
 <footer>
   <div class="wrap foot">
     <a class="logo" href="#top">resiting<span style="color:var(--lake)">.</span></a>
-    <p>Siti web per piccole attività · Montichiari (BS)</p>
+    <p>Siti web per piccole attività · Montichiari (BS) · <a class="mail-link" href="mailto:info@resiting.site">info@resiting.site</a></p>
     <p>© 2026 Resiting</p>
   </div>
 </footer>
