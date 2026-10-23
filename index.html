@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Resiting · Siti web per attività di Montichiari</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%230d1116%22/%3E%3Ccircle cx=%2223%22 cy=%2223%22 r=%224%22 fill=%22%2362c6dd%22/%3E%3C/svg%3E">
+<meta name="description" content="Resiting crea siti web per piccole attività di Montichiari e dintorni: negozi, ristoranti, centri estetici, centri sportivi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: agenzia scura stile therope, tipografia enorme a sinistra, bande a tutta larghezza, griglie che si chiudono a una colonna su telefono */
+:root{
+  --ink:#0d1116;          /* fondo */
+  --ink-2:#151b23;        /* superfici */
+  --line:#263040;         /* filetti */
+  --paper:#eef2f6;        /* testo */
+  --muted:#93a0b2;        /* testo secondario */
+  --lake:#62c6dd;         /* accento: il blu del Garda */
+  --lake-ink:#05222b;     /* testo su accento */
+  --f-display:"Syne","Arial Black",system-ui,sans-serif;
+  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --wrap:1240px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--ink);color:var(--paper);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--ink)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--lake);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:760px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+.label{font:500 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--lake)}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;letter-spacing:-.02em}
+p{margin:0}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--ink) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:16px}
+.logo{font:800 22px/1 var(--f-display);text-decoration:none;letter-spacing:-.03em}
+.logo span{color:var(--lake)}
+nav ul{display:none;list-style:none;margin:0;padding:0;gap:28px}
+nav a{text-decoration:none;font-weight:500;color:var(--muted);transition:color .2s}
+nav a:hover{color:var(--paper)}
+@media (min-width:860px){nav ul{display:flex}}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font:600 15px/1 var(--f-body);text-decoration:none;border:1px solid var(--paper);transition:background .2s,color .2s,border-color .2s;cursor:pointer;background:transparent;color:var(--paper)}
+.btn:hover{background:var(--paper);color:var(--ink)}
+.btn.solid{background:var(--lake);border-color:var(--lake);color:var(--lake-ink)}
+.btn.solid:hover{background:var(--paper);border-color:var(--paper)}
+.btn.small{padding:10px 18px;font-size:14px}
+.arrow{transition:transform .2s}
+.btn:hover .arrow,.work:hover .arrow{transform:translateX(4px)}
+
+/* hero */
+.hero{padding-block:clamp(56px,10vw,120px) clamp(48px,7vw,88px)}
+.hero h1{font-size:clamp(44px,9.2vw,132px);line-height:.94;font-weight:800;margin-top:22px;max-width:12ch}
+.hero h1 em{font-style:normal;color:var(--lake)}
+.hero-foot{display:grid;gap:28px;margin-top:clamp(32px,5vw,56px);align-items:end}
+@media (min-width:860px){.hero-foot{grid-template-columns:1fr auto}}
+.hero-foot p{font-size:clamp(18px,1.6vw,21px);color:var(--muted);max-width:52ch}
+.hero-foot p strong{color:var(--paper);font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ticker */
+.ticker{border-block:1px solid var(--line);overflow:hidden;padding-block:18px}
+.track{display:flex;gap:48px;width:max-content;animation:scroll 40s linear infinite;font:700 clamp(20px,2.4vw,30px)/1 var(--f-display);color:var(--muted)}
+.track span::after{content:"✦";margin-left:48px;color:var(--lake);font-size:.6em;vertical-align:middle}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+section{padding-block:clamp(72px,10vw,128px)}
+.head{display:grid;gap:18px;margin-bottom:clamp(40px,6vw,64px)}
+.head h2{font-size:clamp(34px,5.4vw,72px);line-height:1;font-weight:800;max-width:18ch}
+.head p{color:var(--muted);max-width:60ch;font-size:18px}
+
+/* manifesto */
+.manifesto h2{font-size:clamp(30px,4.6vw,60px);line-height:1.08;font-weight:700;max-width:22ch}
+.manifesto h2 span{color:var(--muted)}
+.facts{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
+@media (min-width:760px){.facts{grid-template-columns:repeat(3,1fr)}}
+.fact{background:var(--ink);padding:28px;display:grid;gap:10px;align-content:start}
+.fact b{font:800 40px/1 var(--f-display);color:var(--lake)}
+.fact p{color:var(--muted)}
+
+/* servizi */
+.services{display:grid;border-top:1px solid var(--line)}
+@media (min-width:760px){.services{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1080px){.services{grid-template-columns:repeat(3,1fr)}}
+.svc{padding:32px 28px 36px 0;border-bottom:1px solid var(--line);display:grid;gap:14px;align-content:start;min-width:0}
+@media (min-width:760px){.svc{padding-right:36px}}
+.svc h3{font-size:26px;line-height:1.1;font-weight:700}
+.svc p{color:var(--muted)}
+.svc .label{color:var(--muted)}
+
+/* lavori */
+.works{display:grid;gap:20px}
+@media (min-width:760px){.works{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1080px){.works{grid-template-columns:repeat(3,1fr)}}
+.work{position:relative;display:grid;grid-template-rows:auto 1fr;text-decoration:none;background:var(--ink-2);border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:border-color .25s,transform .25s}
+.work:hover{border-color:var(--lake);transform:translateY(-3px)}
+.cover{aspect-ratio:16/10;max-width:100%;display:grid;align-content:space-between;padding:22px;background:var(--c1);color:var(--c2)}
+.cover .tag{font:500 11px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.cover strong{font:800 clamp(28px,3vw,36px)/1 var(--f-display);letter-spacing:-.02em;text-wrap:balance}
+.work .body{padding:20px 22px 22px;display:grid;gap:12px;align-content:space-between}
+.work .body p{color:var(--muted);font-size:15.5px}
+.work .go{display:flex;justify-content:space-between;align-items:center;font:500 13px/1 var(--f-mono);color:var(--paper)}
+.work .go span:first-child{color:var(--muted)}
+.works .more{background:transparent;border:1px dashed var(--line);border-radius:6px;padding:28px;display:grid;gap:16px;align-content:center}
+.works .more h3{font-size:28px;font-weight:700}
+.works .more p{color:var(--muted)}
+
+/* metodo */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s}
+.step{display:grid;gap:12px 40px;padding-block:32px;border-top:1px solid var(--line);counter-increment:s}
+.step:last-child{border-bottom:1px solid var(--line)}
+@media (min-width:860px){.step{grid-template-columns:120px 1fr 1.2fr;align-items:baseline}}
+.step::before{content:"0" counter(s);font:800 44px/1 var(--f-display);color:var(--lake)}
+.step h3{font-size:clamp(24px,2.6vw,32px);font-weight:700;line-height:1.1}
+.step p{color:var(--muted);max-width:56ch}
+
+/* faq */
+.faq{display:grid;gap:0;border-top:1px solid var(--line);max-width:900px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;padding-block:26px;font:700 clamp(19px,2vw,24px)/1.25 var(--f-display)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--lake);font-size:1.3em;line-height:.9;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);padding-bottom:26px;max-width:68ch}
+
+/* cta */
+.cta{background:var(--lake);color:var(--lake-ink)}
+.cta .label{color:var(--lake-ink)}
+.cta h2{font-size:clamp(40px,7.6vw,110px);line-height:.95;font-weight:800;max-width:13ch;margin-top:18px}
+.cta-grid{display:grid;gap:1px;background:color-mix(in srgb,var(--lake-ink) 25%,transparent);margin-top:56px;border:1px solid color-mix(in srgb,var(--lake-ink) 25%,transparent)}
+@media (min-width:860px){.cta-grid{grid-template-columns:repeat(3,1fr)}}
+.cta-item{background:var(--lake);padding:28px;display:grid;gap:10px;align-content:start;min-width:0}
+.cta-item h3{font-size:24px;font-weight:700}
+.cta-item p{opacity:.82}
+.mail{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
+.mail code{font:500 16px/1.3 var(--f-mono);user-select:all;word-break:break-all}
+.copy{border:1px solid var(--lake-ink);background:transparent;color:var(--lake-ink);border-radius:999px;padding:6px 12px;font:500 12px/1 var(--f-mono);cursor:pointer}
+.copy:hover{background:var(--lake-ink);color:var(--lake)}
+
+footer{padding-block:40px;color:var(--muted);font-size:14px}
+.foot{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center}
+.foot .logo{font-size:28px;color:var(--paper)}
+
+/* entrata */
+@keyframes rise{from{transform:translateY(18px);opacity:.001}to{transform:none;opacity:1}}
+.hero .label,.hero h1,.hero-foot{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{animation-delay:.08s}.hero-foot{animation-delay:.18s}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">resiting<span>.</span></a>
+    <nav aria-label="Menu principale"><ul>
+      <li><a href="#servizi">Servizi</a></li>
+      <li><a href="#lavori">Lavori</a></li>
+      <li><a href="#metodo">Come lavoro</a></li>
+      <li><a href="#faq">Domande</a></li>
+    </ul></nav>
+    <a class="btn small solid" href="#contatti">Parliamone <span class="arrow">→</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <p class="label">Siti web · Montichiari (BS) e dintorni</p>
+    <h1>Il sito che la tua <em>attività</em> merita.</h1>
+    <div class="hero-foot">
+      <p>Creo siti per negozi, ristoranti, centri estetici e realtà sportive del territorio. <strong>Ti mostro il tuo sito già pronto prima ancora di chiederti un euro</strong>, così decidi guardando una cosa vera.</p>
+      <div class="actions">
+        <a class="btn solid" href="#lavori">Guarda i lavori <span class="arrow">→</span></a>
+        <a class="btn" href="#contatti">Richiedi un preventivo</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker" aria-hidden="true"><div class="track">
+    <span>Pizzerie</span><span>Forni</span><span>Colorifici</span><span>Centri estetici</span><span>Centri sportivi</span><span>Negozi per animali</span><span>Parchi giochi</span>
+    <span>Pizzerie</span><span>Forni</span><span>Colorifici</span><span>Centri estetici</span><span>Centri sportivi</span><span>Negozi per animali</span><span>Parchi giochi</span>
+  </div></div>
+
+  <section class="manifesto">
+    <div class="wrap">
+      <p class="label">Perché un sito</p>
+      <h2 style="margin-top:18px">Un sito ha un solo compito: <span>far entrare più clienti dalla tua porta.</span></h2>
+      <div class="facts">
+        <div class="fact"><b>Telefono</b><p>Chi ti cerca lo fa quasi sempre dallo smartphone. Ogni pagina è pensata prima per lo schermo piccolo.</p></div>
+        <div class="fact"><b>Un tocco</b><p>Chiamata, WhatsApp, prenotazione e indicazioni stradali sempre in vista, senza cercarle.</p></div>
+        <div class="fact"><b>Orari</b><p>Orari, indirizzo e mappa chiari. Sono le prime cose che un cliente vuole sapere, e spesso mancano.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servizi" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">Servizi</p>
+        <h2>Tutto quello che serve, niente di superfluo.</h2>
+      </div>
+      <div class="services">
+        <article class="svc"><p class="label">Base</p><h3>Sito vetrina</h3><p>Chi sei, cosa offri, dove trovarti. Veloce, curato e ottimizzato per smartphone.</p></article>
+        <article class="svc"><p class="label">Contatti</p><h3>Prenotazioni e WhatsApp</h3><p>Pulsanti per prenotare un tavolo, un trattamento o un campo, collegati ai canali che usi già.</p></article>
+        <article class="svc"><p class="label">Visibilità</p><h3>Google e mappe</h3><p>Ti aiuto a farti trovare da chi cerca “vicino a me”: scheda Google, indirizzo e contenuti locali.</p></article>
+        <article class="svc"><p class="label">Contenuti</p><h3>Menù e cataloghi</h3><p>Menù, listini, reparti e prodotti online, così il cliente sceglie già prima di chiamare.</p></article>
+        <article class="svc"><p class="label">Rinnovo</p><h3>Restyling del sito vecchio</h3><p>Hai un sito fermo da anni, con link rotti o senza orari? Lo rifacciamo moderno e chiaro.</p></article>
+        <article class="svc"><p class="label">Dopo</p><h3>Aggiornamenti</h3><p>Nuove foto, orari festivi, promozioni: mi scrivi e aggiorno io, senza che tu debba imparare nulla.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="lavori" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">Lavori · Montichiari</p>
+        <h2>Sette attività, sette siti già pronti.</h2>
+        <p>Sono proposte che ho realizzato per attività di Montichiari. Aprile e provale dal telefono: è lo stesso lavoro che posso fare per te.</p>
+      </div>
+      <div class="works">
+        <a class="work" href="https://dapaoletto.netlify.app/" target="_blank" rel="noopener" style="--c1:#7a1f14;--c2:#fbe9d0">
+          <div class="cover"><span class="tag">Pizzeria</span><strong>Da Paoletto</strong></div>
+          <div class="body"><p>Pizza napoletana con prenotazione del tavolo e asporto via WhatsApp in un tocco.</p><div class="go"><span>dapaoletto</span><span>Apri la demo <span class="arrow">→</span></span></div></div>
+        </a>
+        <a class="work" href="https://paneefarinatest.netlify.app/" target="_blank" rel="noopener" style="--c1:#e6d3b1;--c2:#3b2714">
+          <div class="cover"><span class="tag">Forneria</span><strong>Pane e Farina</strong></div>
+          <div class="body"><p>Il forno di Viale Europa: prodotti del giorno, orari e chiamata diretta.</p><div class="go"><span>paneefarina</span><span>Apri la demo <span class="arrow">→</span></span></div></div>
+        </a>
+        <a class="work" href="https://styleartt.netlify.app/" target="_blank" rel="noopener" style="--c1:#2b3a8f;--c2:#ffd84a">
+          <div class="cover"><span class="tag">Colorificio</span><strong>Style Art</strong></div>
+          <div class="body"><p>Reparti chiari, consulenza colore su WhatsApp e uno spazio per artisti e scuole d'arte.</p><div class="go"><span>styleart</span><span>Apri la demo <span class="arrow">→</span></span></div></div>
+        </a>
+        <a class="work" href="https://newlineestetica.netlify.app/" target="_blank" rel="noopener" style="--c1:#ecd6d2;--c2:#4a2630">
+          <div class="cover"><span class="tag">Centro estetico</span><strong>New Line Estetica</strong></div>
+          <div class="body"><p>Trattamenti presentati con eleganza e prenotazione semplice dal telefono.</p><div class="go"><span>newline</span><span>Apri la demo <span class="arrow">→</span></span></div></div>
+        </a>
+        <a class="work" href="https://zootecnica.netlify.app/" target="_blank" rel="noopener" style="--c1:#264d2c;--c2:#e7f0d4">
+          <div class="cover"><span class="tag">Pet · Giardino · Agricoltura</span><strong>Zootecnica Bonacini</strong></div>
+          <div class="body"><p>Quattro reparti ben visibili, orari e mappa in ogni pagina, chiamata per chiedere un prodotto.</p><div class="go"><span>zootecnica</span><span>Apri la demo <span class="arrow">→</span></span></div></div>
+        </a>
+        <a class="work" href="https://montichirello.netlify.app/" target="_blank" rel="noopener" style="--c1:#0f5132;--c2:#ffffff">
+          <div class="cover"><span class="tag">Centro sportivo</span><strong>Montichiarello</strong></div>
+          <div class="body"><p>Quattro campi in sintetico, prenotazione collegata e una sezione per FC Voluntas.</p><div class="go"><span>montichiarello</span><span>Apri la demo <span class="arrow">→</span></span></div></div>
+        </a>
+        <a class="work" href="https://vadaboom.netlify.app/" target="_blank" rel="noopener" style="--c1:#ff7a1a;--c2:#fff7ec">
+          <div class="cover"><span class="tag">Parco giochi · Feste · Pizzeria</span><strong>Vadaboom</strong></div>
+          <div class="body"><p>600 m² di parco giochi al coperto, feste di compleanno e ristorante, con prenotazione su WhatsApp.</p><div class="go"><span>vadaboom</span><span>Apri la demo <span class="arrow">→</span></span></div></div>
+        </a>
+        <div class="more">
+          <h3>La prossima può essere la tua.</h3>
+          <p>Dimmi il nome della tua attività: preparo una demo e te la mostro, senza impegno.</p>
+          <div><a class="btn solid small" href="#contatti">Voglio la mia demo <span class="arrow">→</span></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodo" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">Come lavoro</p>
+        <h2>Prima vedi il sito, poi decidi.</h2>
+      </div>
+      <ol class="steps">
+        <li class="step"><h3>Preparo una demo</h3><p>Studio la tua attività, le recensioni e il sito attuale se c'è, e preparo una prima versione del tuo sito. Gratis.</p></li>
+        <li class="step"><h3>Te la mostro di persona</h3><p>Passo in negozio per dieci o quindici minuti, negli orari che preferisci. Guardiamo la demo insieme sul telefono.</p></li>
+        <li class="step"><h3>La rendiamo tua</h3><p>Foto vere, testi, prezzi, menù e colori. Sistemiamo tutto finché non ti rappresenta davvero.</p></li>
+        <li class="step"><h3>Va online</h3><p>Pubblico il sito sul tuo dominio e resto il tuo riferimento per gli aggiornamenti.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">Domande</p>
+        <h2>Le cose che mi chiedono più spesso.</h2>
+      </div>
+      <div class="faq">
+        <details open><summary>Quanto costa un sito?</summary><p>Dipende da cosa serve: un sito vetrina è diverso da un sito con menù e prenotazioni. Ti do un preventivo chiaro prima di iniziare. La demo invece è sempre gratuita e senza impegno.</p></details>
+        <details><summary>Ho già un sito. Ha senso rifarlo?</summary><p>Se non mostra gli orari, non si legge bene dal telefono o è fermo da anni, probabilmente sì. Ti preparo una proposta e la confronti con quello che hai oggi.</p></details>
+        <details><summary>Devo occuparmi io di dominio e hosting?</summary><p>No. Ti aiuto a scegliere il nome del sito e me ne occupo io. Il dominio resta intestato a te.</p></details>
+        <details><summary>E se devo cambiare orari o foto?</summary><p>Mi scrivi e lo aggiorno io. Se preferisci, ti mostro come fare le modifiche più semplici da solo.</p></details>
+        <details><summary>Lavori solo a Montichiari?</summary><p>Parto da Montichiari, ma lavoro volentieri con attività di tutta la zona: Castenedolo, Carpenedolo, Ghedi, Calcinato, il Garda e Brescia.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contatti" class="cta">
+    <div class="wrap">
+      <p class="label">Contatti</p>
+      <h2>Parliamo del tuo sito.</h2>
+      <div class="cta-grid">
+        <div class="cta-item"><h3>Scrivimi</h3><p>Raccontami la tua attività in due righe. Rispondo entro un giorno lavorativo.</p>
+          <div class="mail"><code id="mail">info@resiting.site</code><button class="copy" id="copy" type="button">Copia</button></div></div>
+        <div class="cta-item"><h3>Chiedi una demo</h3><p>Mandami il nome dell'attività e, se c'è, il link al sito o alla pagina Instagram. Preparo una proposta gratuita.</p></div>
+        <div class="cta-item"><h3>Incontriamoci</h3><p>Passo io da te, a Montichiari e dintorni, per mostrarti la demo dal vivo.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="logo" href="#top">resiting<span style="color:var(--lake)">.</span></a>
+    <p>Siti web per piccole attività · Montichiari (BS)</p>
+    <p>© 2026 Resiting</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+  var b=this,t=document.getElementById('mail').textContent;
+  var done=function(){b.textContent='Copiato';setTimeout(function(){b.textContent='Copia'},1600)};
+  try{navigator.clipboard.writeText(t).then(done,function(){sel()})}catch(e){sel()}
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
+});
+</script>
+</body>
+</html>
